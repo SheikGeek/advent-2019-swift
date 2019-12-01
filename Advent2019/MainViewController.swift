@@ -12,7 +12,8 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     
-    private var dataSource = [Day]()
+    private var dataSource = [[Day]]()
+    private var sectionTitles = [String]()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,12 +25,29 @@ class MainViewController: UIViewController {
     
     private func buildDataSource() {
         
-        for day in 1...49 {
+        var sectionArray = [Day]()
+        for day in 1...50 {
+            
+            let currentDay: Day
             switch day {
             case 1:
-                dataSource.append(DayOnePartOne())
+                currentDay = DayOnePartOne()
+            case 2:
+                currentDay = DayOnePartTwo()
             default:
-                dataSource.append(DayUnimplemented(dayTitle: "Day \(day)"))
+                currentDay = DayUnimplemented()
+            }
+            
+            sectionArray.append(currentDay)
+            
+            if day%2 == 0 {
+                dataSource.append(sectionArray)
+                
+                //Reset the section Array
+                sectionArray = []
+                
+                //setup the section Titles
+                sectionTitles.append(currentDay.dayTitle)
             }
         }
     }
@@ -37,8 +55,12 @@ class MainViewController: UIViewController {
 
 extension MainViewController: UITableViewDataSource, UITableViewDelegate {
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return sectionTitles.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.count
+        return dataSource[section].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -46,13 +68,31 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        let day = dataSource[indexPath.row]
-        cell.setup(with: day.dayTitle, description: day.description)
+        let day = dataSource[indexPath.section][indexPath.row]
+        cell.setup(with: day.partTitle, description: day.description)
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = Bundle.main.loadNibNamed(DayListHeaderView.nibName, owner: self, options: nil)?.first as? DayListHeaderView else { return nil }
+        
+        headerView.setup(with: sectionTitles[section])
+        return headerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        let padding: CGFloat = 20
+        
+        let constraintRect = CGSize(width: tableView.frame.width - (padding * 2), height: .greatestFiniteMagnitude)
+        let boundingBox = sectionTitles[section].boundingRect(with: constraintRect,
+                                                              options: .usesLineFragmentOrigin,
+                                                              attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 19.0, weight: .bold)], context: nil)
+        
+        return ceil(boundingBox.height) + (padding * 2)
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let day = dataSource[indexPath.row]
+        let day = dataSource[indexPath.section][indexPath.row]
         let answer = day.answer()
         
         if let alert = answer.alert {

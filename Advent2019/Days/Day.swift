@@ -11,6 +11,7 @@ import UIKit
 
 protocol Day: class {
     var dayTitle: String {set get}
+    var partTitle: String {set get}
     var description: String {set get}
 
     func answer() -> DayAnswer

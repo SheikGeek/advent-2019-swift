@@ -37,14 +37,15 @@ class DayOnePartOne: Day {
     
     private let fileInputName = "DayOneInput"
     
-    var dayTitle = "Day 1, Part 1: The Tyranny of the Rocket Equation"
+    var dayTitle = "Day 1: The Tyranny of the Rocket Equation"
+    var partTitle = "Part 1"
     var description = "What is the sum of the fuel requirements for all of the modules on your spacecraft?"
     
     
     func answer() -> DayAnswer {
         
         let solution = solveProblem()
-        let alert = UIAlertController(title: "Answer for \(dayTitle)", message: "The total fuel needed is \(solution)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Answer for \(partTitle)", message: "The total fuel needed is \(solution)", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         

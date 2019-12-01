@@ -27,7 +27,7 @@ class MainViewController: UIViewController {
         for day in 1...49 {
             switch day {
             case 1:
-                dataSource.append(DayOne())
+                dataSource.append(DayOnePartOne())
             default:
                 dataSource.append(DayUnimplemented(dayTitle: "Day \(day)"))
             }
@@ -56,7 +56,9 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         let answer = day.answer()
         
         if let alert = answer.alert {
-            present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.present(alert, animated: true, completion: nil)
+            }
         } else if let vc = answer.vc {
             //Not implemented yet
         }

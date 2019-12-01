@@ -53,7 +53,7 @@ class DayOnePartOne: Day {
     }
 }
 
-extension DayOnePartOne {
+private extension DayOnePartOne {
     
     func solveProblem() -> String {
         let fileOutput = parseInputFile(name: fileInputName)

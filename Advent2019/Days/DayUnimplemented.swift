@@ -10,12 +10,9 @@ import Foundation
 import UIKit
 
 class DayUnimplemented: Day {
-    var dayTitle: String
+    var dayTitle = "Day ???"
+    var partTitle = "Part ???"
     var description = "Not Implemented Yet"
-
-    init(dayTitle: String) {
-        self.dayTitle = dayTitle
-    }
     
     func answer() -> DayAnswer {
         let alert = UIAlertController(title: "Answer for \(dayTitle)", message: "Why aren't you writing any code?????", preferredStyle: .alert)

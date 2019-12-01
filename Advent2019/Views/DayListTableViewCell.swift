@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class DayListTableViewCell: UITableViewCell {
+class DayListTableViewCell: UITableViewCell, ReusableView {
     
     @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var descriptionLabel: UILabel!
@@ -22,17 +22,5 @@ class DayListTableViewCell: UITableViewCell {
     func setup(with title: String, description: String) {
         dayLabel.text = title
         descriptionLabel.text = description
-    }
-}
-
-//Cell Helpers
-extension DayListTableViewCell {
-    
-    static var nibName: String {
-       return String(describing: DayListTableViewCell.self)
-    }
-    
-    static var nib: UINib {
-        return UINib(nibName: nibName, bundle: .main)
     }
 }

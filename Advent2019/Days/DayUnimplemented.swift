@@ -11,8 +11,14 @@ import UIKit
 
 class DayUnimplemented: Day {
     var dayTitle = "Day ???"
-    var partTitle = "Part ???"
-    var description = "Not Implemented Yet"
+
+    func partTitle() -> String {
+        return "Part ???"
+    }
+    
+    func description() -> String {
+        return "Not Implemented Yet"
+    }
     
     func answer() -> DayAnswer {
         let alert = UIAlertController(title: "Answer for \(dayTitle)", message: "Why aren't you writing any code?????", preferredStyle: .alert)

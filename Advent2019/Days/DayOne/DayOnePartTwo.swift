@@ -23,17 +23,19 @@ The fuel required by a module of mass 100756 and its fuel is: 33583 + 11192 + 37
 What is the sum of the fuel requirements for all of the modules on your spacecraft when also taking into account the mass of the added fuel? (Calculate the fuel requirements for each module separately, then add them all up at the end.)
 */
 
-class DayOnePartTwo: Day {
+class DayOnePartTwo: DayOne {
     
-    private let fileInputName = "DayOneInput"
+    override func partTitle() -> String {
+        return "Part 2"
+    }
     
-    var dayTitle = "Day 1: The Tyranny of the Rocket Equation"
-    var partTitle = "Part 2"
-    var description = "What is the sum of the fuel requirements for all of the modules on your spacecraft when also taking into account the mass of the added fuel?"
-    
-    func answer() -> DayAnswer {
+    override func description() -> String {
+        return "What is the sum of the fuel requirements for all of the modules on your spacecraft when also taking into account the mass of the added fuel?"
+    }
+   
+    override func answer() -> DayAnswer {
         let solution = solveProblem()
-        let alert = UIAlertController(title: "Answer for \(partTitle)", message: "The total fuel needed for all fuel is \(solution)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The total fuel needed for all fuel is \(solution)", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
@@ -44,33 +46,24 @@ class DayOnePartTwo: Day {
 private extension DayOnePartTwo {
     
     func solveProblem() -> String {
-        let fileOutput = parseInputFile(name: fileInputName)
-        guard !fileOutput.isEmpty else {
-            return ""
-        }
-        
-        let fileOutputArray = fileOutput.components(separatedBy:"\n")
+        let modules = parseAndSplitData()
         var total = 0
         
-        for fuelModuleString in fileOutputArray {
-            guard let fuelModuleDouble = Double(fuelModuleString) else {
-                //All numbers should be valid
-                continue
-            }
-            let initialFuelAmount = floor(fuelModuleDouble / 3) - 2
-            let fuelAmount = Int(moduleTotal(from: initialFuelAmount))
-            total += fuelAmount
+        for module in modules {
+            
+            let initialFuelAmount = calculateFuelFromString(for: module)
+            let totalFuelAmount = Int(moduleTotal(from: initialFuelAmount))
+            total += totalFuelAmount
         }
         
         return "\(total)"
     }
 
     private func moduleTotal(from currentModule: Double) -> Double {
-        let fuelAmount = Int(floor(currentModule / 3)) - 2
-        if fuelAmount > 0 {
-            return moduleTotal(from: Double(fuelAmount)) + currentModule
-        } else {
-            return currentModule
-        }
+        let fuelAmount = calculateFuel(for: currentModule)
+        
+        guard fuelAmount > 0 else { return currentModule }
+        return moduleTotal(from: fuelAmount) + currentModule
+        
     }
 }

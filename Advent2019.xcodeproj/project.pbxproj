@@ -23,6 +23,7 @@
 		2890460823942DD000355DE4 /* DayListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2890460723942DD000355DE4 /* DayListHeaderView.xib */; };
 		2890460A23942DE300355DE4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890460923942DE300355DE4 /* ReusableView.swift */; };
 		2890460D2394331700355DE4 /* DayOnePartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890460C2394331700355DE4 /* DayOnePartTwo.swift */; };
+		2890461123948F6D00355DE4 /* DayOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890461023948F6D00355DE4 /* DayOne.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		2890460723942DD000355DE4 /* DayListHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DayListHeaderView.xib; sourceTree = "<group>"; };
 		2890460923942DE300355DE4 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		2890460C2394331700355DE4 /* DayOnePartTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOnePartTwo.swift; sourceTree = "<group>"; };
+		2890461023948F6D00355DE4 /* DayOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOne.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 		2890460B239432FA00355DE4 /* DayOne */ = {
 			isa = PBXGroup;
 			children = (
+				2890461023948F6D00355DE4 /* DayOne.swift */,
 				289045FD2394188F00355DE4 /* DayOnePartOne.swift */,
 				2890460C2394331700355DE4 /* DayOnePartTwo.swift */,
 			);
@@ -269,6 +272,7 @@
 				2890460D2394331700355DE4 /* DayOnePartTwo.swift in Sources */,
 				289045FE2394188F00355DE4 /* DayOnePartOne.swift in Sources */,
 				289045FC239417F500355DE4 /* Day.swift in Sources */,
+				2890461123948F6D00355DE4 /* DayOne.swift in Sources */,
 				2890460623942DB400355DE4 /* DayListHeaderView.swift in Sources */,
 				289045D7239413E500355DE4 /* AppDelegate.swift in Sources */,
 			);

@@ -33,19 +33,20 @@ import UIKit
  */
 
 
-class DayOnePartOne: Day {
+class DayOnePartOne: DayOne {
     
-    private let fileInputName = "DayOneInput"
+    override func partTitle() -> String {
+        return "Part 1"
+    }
     
-    var dayTitle = "Day 1: The Tyranny of the Rocket Equation"
-    var partTitle = "Part 1"
-    var description = "What is the sum of the fuel requirements for all of the modules on your spacecraft?"
+    override func description() -> String {
+        return "What is the sum of the fuel requirements for all of the modules on your spacecraft?"
+    }
     
-    
-    func answer() -> DayAnswer {
+    override func answer() -> DayAnswer {
         
         let solution = solveProblem()
-        let alert = UIAlertController(title: "Answer for \(partTitle)", message: "The total fuel needed is \(solution)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The total fuel needed is \(solution)", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
@@ -56,24 +57,11 @@ class DayOnePartOne: Day {
 private extension DayOnePartOne {
     
     func solveProblem() -> String {
-        let fileOutput = parseInputFile(name: fileInputName)
-        guard !fileOutput.isEmpty else {
-            return ""
-        }
+        let modules = parseAndSplitData()
+        var total: Double = 0
         
-        let fileOutputArray = fileOutput.components(separatedBy:"\n")
-        var total = 0
-        
-        for fuelModuleString in fileOutputArray {
-            guard let fuelModuleDouble = Double(fuelModuleString) else {
-                //All numbers should be valid
-                continue
-            }
-            
-            let fuelAmount = Int(floor(fuelModuleDouble / 3)) - 2
-            total += fuelAmount
-        }
-        
-        return "\(total)"
+        modules.forEach { total += calculateFuelFromString(for: $0) }
+       
+        return "\(Int(total))"
     }
 }

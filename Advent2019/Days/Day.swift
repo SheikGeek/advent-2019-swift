@@ -11,22 +11,20 @@ import UIKit
 
 protocol Day: class {
     var dayTitle: String {set get}
-    var partTitle: String {set get}
-    var description: String {set get}
-
+    
+    func partTitle() -> String
+    func description() -> String
     func answer() -> DayAnswer
+    
     func parseInputFile(name: String) -> String
 }
 
 extension Day {
     func parseInputFile(name: String) -> String {
-        guard let path = Bundle.main.path(forResource:name, ofType: "txt") else {
-            return ""
-        }
+        guard let path = Bundle.main.path(forResource:name, ofType: "txt") else { return "" }
         
         do {
-            let output = try String(contentsOfFile: path, encoding: .utf8)
-            return output
+            return try String(contentsOfFile: path, encoding: .utf8)
         } catch {
             return ""
         }

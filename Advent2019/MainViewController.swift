@@ -69,7 +69,7 @@ extension MainViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         let day = dataSource[indexPath.section][indexPath.row]
-        cell.setup(with: day.partTitle, description: day.description)
+        cell.setup(with: day.partTitle(), description: day.description())
         return cell
     }
     

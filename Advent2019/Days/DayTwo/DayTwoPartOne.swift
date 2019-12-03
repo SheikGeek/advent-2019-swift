@@ -80,44 +80,6 @@ class DayTwoPartOne: DayTwo {
 private extension DayTwoPartOne {
     
     func solveProblem() -> String {
-        var answerCode = parseAndSplitData()
-        
-        //Modify the first couple of positions for the problem
-        answerCode[1] = 12
-        answerCode[2] = 2
-        
-        let indexIncrement = 4
-        var nextIndex = 0
-        var noNinetyNine = true
-        
-        while noNinetyNine {
-            let currentIndex = nextIndex
-            nextIndex += indexIncrement
-            
-            guard answerCode.count > currentIndex + 3 else {
-                noNinetyNine = false
-                continue
-            }
-            
-            let opcode = answerCode[currentIndex]
-            let position1 = answerCode[answerCode[currentIndex + 1]]
-            let position2 = answerCode[answerCode[currentIndex + 2]]
-            let positionToFill = answerCode[currentIndex + 3]
-
-            guard opcode != 99 else {
-                    noNinetyNine = false
-                    continue
-            }
-            
-            if opcode == 1 {
-                //Add the positions
-                answerCode[positionToFill] = position1 + position2
-            } else if opcode == 2 {
-                //multiply the positions
-                answerCode[positionToFill] = position1 * position2
-            }
-        }
-        
-        return "\(answerCode[0])"
+        return "\(determinePositionZero(from: parseAndSplitData(), noun: 12, verb: 2))"
     }
 }

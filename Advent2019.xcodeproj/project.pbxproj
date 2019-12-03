@@ -24,6 +24,10 @@
 		2890460A23942DE300355DE4 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890460923942DE300355DE4 /* ReusableView.swift */; };
 		2890460D2394331700355DE4 /* DayOnePartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890460C2394331700355DE4 /* DayOnePartTwo.swift */; };
 		2890461123948F6D00355DE4 /* DayOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2890461023948F6D00355DE4 /* DayOne.swift */; };
+		289046132395E01300355DE4 /* DayTwoInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 289046122395E01300355DE4 /* DayTwoInput.txt */; };
+		289046162395E05B00355DE4 /* DayTwoPartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289046152395E05B00355DE4 /* DayTwoPartOne.swift */; };
+		289046182395E17E00355DE4 /* DayTwoPartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289046172395E17E00355DE4 /* DayTwoPartTwo.swift */; };
+		2890461A2395E18B00355DE4 /* DayTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 289046192395E18B00355DE4 /* DayTwo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +62,10 @@
 		2890460923942DE300355DE4 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		2890460C2394331700355DE4 /* DayOnePartTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayOnePartTwo.swift; sourceTree = "<group>"; };
 		2890461023948F6D00355DE4 /* DayOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOne.swift; sourceTree = "<group>"; };
+		289046122395E01300355DE4 /* DayTwoInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayTwoInput.txt; sourceTree = "<group>"; };
+		289046152395E05B00355DE4 /* DayTwoPartOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTwoPartOne.swift; sourceTree = "<group>"; };
+		289046172395E17E00355DE4 /* DayTwoPartTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTwoPartTwo.swift; sourceTree = "<group>"; };
+		289046192395E18B00355DE4 /* DayTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTwo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				2890460B239432FA00355DE4 /* DayOne */,
+				289046142395E04000355DE4 /* DayTwo */,
 				289045FB239417F500355DE4 /* Day.swift */,
 				289045FF23941BC000355DE4 /* DayUnimplemented.swift */,
 			);
@@ -135,6 +144,7 @@
 			isa = PBXGroup;
 			children = (
 				289046012394232D00355DE4 /* DayOneInput.txt */,
+				289046122395E01300355DE4 /* DayTwoInput.txt */,
 			);
 			path = DayInputFiles;
 			sourceTree = "<group>";
@@ -159,6 +169,16 @@
 				2890460C2394331700355DE4 /* DayOnePartTwo.swift */,
 			);
 			path = DayOne;
+			sourceTree = "<group>";
+		};
+		289046142395E04000355DE4 /* DayTwo */ = {
+			isa = PBXGroup;
+			children = (
+				289046192395E18B00355DE4 /* DayTwo.swift */,
+				289046152395E05B00355DE4 /* DayTwoPartOne.swift */,
+				289046172395E17E00355DE4 /* DayTwoPartTwo.swift */,
+			);
+			path = DayTwo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +263,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				289045E1239413E600355DE4 /* LaunchScreen.storyboard in Resources */,
+				289046132395E01300355DE4 /* DayTwoInput.txt in Resources */,
 				289045DE239413E600355DE4 /* Assets.xcassets in Resources */,
 				289046022394232D00355DE4 /* DayOneInput.txt in Resources */,
 				289045FA2394167B00355DE4 /* DayListTableViewCell.xib in Resources */,
@@ -267,8 +288,11 @@
 			files = (
 				289045D9239413E500355DE4 /* MainViewController.swift in Sources */,
 				289045F82394163A00355DE4 /* DayListTableViewCell.swift in Sources */,
+				289046162395E05B00355DE4 /* DayTwoPartOne.swift in Sources */,
+				289046182395E17E00355DE4 /* DayTwoPartTwo.swift in Sources */,
 				2890460023941BC000355DE4 /* DayUnimplemented.swift in Sources */,
 				2890460A23942DE300355DE4 /* ReusableView.swift in Sources */,
+				2890461A2395E18B00355DE4 /* DayTwo.swift in Sources */,
 				2890460D2394331700355DE4 /* DayOnePartTwo.swift in Sources */,
 				289045FE2394188F00355DE4 /* DayOnePartOne.swift in Sources */,
 				289045FC239417F500355DE4 /* Day.swift in Sources */,

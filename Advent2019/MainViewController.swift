@@ -26,21 +26,25 @@ class MainViewController: UIViewController {
     private func buildDataSource() {
         
         var sectionArray = [Day]()
-        for day in 1...50 {
+        for dayPart in 1...50 {
             
             let currentDay: Day
-            switch day {
+            switch dayPart {
             case 1:
                 currentDay = DayOnePartOne()
             case 2:
                 currentDay = DayOnePartTwo()
+            case 3:
+                currentDay = DayTwoPartOne()
+            case 4:
+                currentDay = DayTwoPartTwo()
             default:
                 currentDay = DayUnimplemented()
             }
             
             sectionArray.append(currentDay)
             
-            if day%2 == 0 {
+            if dayPart%2 == 0 {
                 dataSource.append(sectionArray)
                 
                 //Reset the section Array

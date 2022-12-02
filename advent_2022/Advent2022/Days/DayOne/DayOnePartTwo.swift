@@ -46,24 +46,25 @@ class DayOnePartTwo: DayOne {
 private extension DayOnePartTwo {
     
     func solveProblem() -> String {
-        let modules = parseAndSplitData()
-        var total = 0
-        
-        for module in modules {
-            
-            let initialFuelAmount = calculateFuelFromString(for: module)
-            let totalFuelAmount = Int(moduleTotal(from: initialFuelAmount))
-            total += totalFuelAmount
-        }
-        
-        return "\(total)"
+//        let modules = parseAndSplitData()
+//        var total = 0
+//
+//        for module in modules {
+//
+//            let initialFuelAmount = calculateFuelFromString(for: module)
+//            let totalFuelAmount = Int(moduleTotal(from: initialFuelAmount))
+//            total += totalFuelAmount
+//        }
+//
+//        return "\(total)"
+        return ""
     }
 
     private func moduleTotal(from currentModule: Double) -> Double {
-        let fuelAmount = calculateFuel(for: currentModule)
-        
-        guard fuelAmount > 0 else { return currentModule }
-        return moduleTotal(from: fuelAmount) + currentModule
-        
+//        let fuelAmount = calculateFuel(for: currentModule)
+//
+//        guard fuelAmount > 0 else { return currentModule }
+//        return moduleTotal(from: fuelAmount) + currentModule
+        return 0
     }
 }

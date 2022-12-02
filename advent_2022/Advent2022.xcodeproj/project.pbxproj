@@ -15,9 +15,6 @@
 		28DE828A2939A7F80052484F /* Advent2022UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82892939A7F80052484F /* Advent2022UITests.swift */; };
 		28DE828C2939A7F80052484F /* Advent2022UITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE828B2939A7F80052484F /* Advent2022UITestsLaunchTests.swift */; };
 		28DE82AA2939A87D0052484F /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82992939A8790052484F /* Day.swift */; };
-		28DE82AB2939A87D0052484F /* DayTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE829B2939A8790052484F /* DayTwo.swift */; };
-		28DE82AC2939A87D0052484F /* DayTwoPartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE829C2939A8790052484F /* DayTwoPartOne.swift */; };
-		28DE82AD2939A87D0052484F /* DayTwoPartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE829D2939A8790052484F /* DayTwoPartTwo.swift */; };
 		28DE82AE2939A87D0052484F /* DayOnePartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE829F2939A8790052484F /* DayOnePartOne.swift */; };
 		28DE82AF2939A87D0052484F /* DayOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82A02939A8790052484F /* DayOne.swift */; };
 		28DE82B02939A87D0052484F /* DayOnePartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82A12939A8790052484F /* DayOnePartTwo.swift */; };
@@ -28,6 +25,7 @@
 		28DE82B52939A87D0052484F /* DayListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82A72939A8790052484F /* DayListHeaderView.swift */; };
 		28DE82B62939A87D0052484F /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82A82939A8790052484F /* ReusableView.swift */; };
 		28DE82B72939A87D0052484F /* DayListHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82A92939A8790052484F /* DayListHeaderView.xib */; };
+		28DE82BA2939B1050052484F /* DayOneInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82B92939B1050052484F /* DayOneInput.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,9 +58,6 @@
 		28DE82892939A7F80052484F /* Advent2022UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2022UITests.swift; sourceTree = "<group>"; };
 		28DE828B2939A7F80052484F /* Advent2022UITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Advent2022UITestsLaunchTests.swift; sourceTree = "<group>"; };
 		28DE82992939A8790052484F /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-		28DE829B2939A8790052484F /* DayTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTwo.swift; sourceTree = "<group>"; };
-		28DE829C2939A8790052484F /* DayTwoPartOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTwoPartOne.swift; sourceTree = "<group>"; };
-		28DE829D2939A8790052484F /* DayTwoPartTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayTwoPartTwo.swift; sourceTree = "<group>"; };
 		28DE829F2939A8790052484F /* DayOnePartOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOnePartOne.swift; sourceTree = "<group>"; };
 		28DE82A02939A8790052484F /* DayOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOne.swift; sourceTree = "<group>"; };
 		28DE82A12939A8790052484F /* DayOnePartTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayOnePartTwo.swift; sourceTree = "<group>"; };
@@ -73,6 +68,7 @@
 		28DE82A72939A8790052484F /* DayListHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayListHeaderView.swift; sourceTree = "<group>"; };
 		28DE82A82939A8790052484F /* ReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		28DE82A92939A8790052484F /* DayListHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DayListHeaderView.xib; sourceTree = "<group>"; };
+		28DE82B92939B1050052484F /* DayOneInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayOneInput.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,6 +151,7 @@
 		28DE82982939A8790052484F /* Days */ = {
 			isa = PBXGroup;
 			children = (
+				28DE82B82939B08C0052484F /* DayInput */,
 				28DE82992939A8790052484F /* Day.swift */,
 				28DE829A2939A8790052484F /* DayTwo */,
 				28DE829E2939A8790052484F /* DayOne */,
@@ -166,9 +163,6 @@
 		28DE829A2939A8790052484F /* DayTwo */ = {
 			isa = PBXGroup;
 			children = (
-				28DE829B2939A8790052484F /* DayTwo.swift */,
-				28DE829C2939A8790052484F /* DayTwoPartOne.swift */,
-				28DE829D2939A8790052484F /* DayTwoPartTwo.swift */,
 			);
 			path = DayTwo;
 			sourceTree = "<group>";
@@ -193,6 +187,14 @@
 				28DE82A92939A8790052484F /* DayListHeaderView.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		28DE82B82939B08C0052484F /* DayInput */ = {
+			isa = PBXGroup;
+			children = (
+				28DE82B92939B1050052484F /* DayOneInput.txt */,
+			);
+			path = DayInput;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DE82BA2939B1050052484F /* DayOneInput.txt in Resources */,
 				28DE82752939A7F80052484F /* LaunchScreen.storyboard in Resources */,
 				28DE82722939A7F80052484F /* Assets.xcassets in Resources */,
 				28DE82B42939A87D0052484F /* DayListTableViewCell.xib in Resources */,
@@ -327,10 +330,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				28DE82AB2939A87D0052484F /* DayTwo.swift in Sources */,
 				28DE82B32939A87D0052484F /* DayListTableViewCell.swift in Sources */,
-				28DE82AC2939A87D0052484F /* DayTwoPartOne.swift in Sources */,
-				28DE82AD2939A87D0052484F /* DayTwoPartTwo.swift in Sources */,
 				28DE82B22939A87D0052484F /* MainViewController.swift in Sources */,
 				28DE82B62939A87D0052484F /* ReusableView.swift in Sources */,
 				28DE82692939A7F60052484F /* AppDelegate.swift in Sources */,

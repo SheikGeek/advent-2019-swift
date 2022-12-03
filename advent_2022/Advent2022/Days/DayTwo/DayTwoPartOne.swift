@@ -60,9 +60,7 @@ class DayTwoPartOne: DayTwo {
 
 private extension DayTwoPartOne {
     
-    func solveProblem() -> String {
-        let lines = parseAndSplitData()
-        
+    func solveProblem() -> String {       
         // A = rock, B = paper, C = scissors
         // X = rock = 1, Y = paper = 2, Z = scissors = 3
         // win = 6, draw = 3, loss = 0
@@ -80,14 +78,6 @@ private extension DayTwoPartOne {
             "B Z",
         ]
         
-        var total: Int = 0
-        
-        lines.forEach {
-            guard let index = possibleCombinations.firstIndex(of: $0) else { return }
-            total += index
-        }
-        
-       
-        return "\(total)"
+        return total(from: possibleCombinations)
     }
 }

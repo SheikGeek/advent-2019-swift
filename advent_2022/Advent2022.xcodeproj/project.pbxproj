@@ -159,8 +159,8 @@
 		28DE82982939A8790052484F /* Days */ = {
 			isa = PBXGroup;
 			children = (
-				28DE82BB293B0D780052484F /* DayTwo */,
 				28DE82B82939B08C0052484F /* DayInput */,
+				28DE82BB293B0D780052484F /* DayTwo */,
 				28DE82992939A8790052484F /* Day.swift */,
 				28DE829E2939A8790052484F /* DayOne */,
 				28DE82A22939A8790052484F /* DayUnimplemented.swift */,

@@ -36,3 +36,17 @@ class DayTwo: Day {
         return fileOutput.components(separatedBy: .newlines)
     }
 }
+
+extension DayTwo {
+    func total(from combos: [String]) -> String {
+        let lines = parseAndSplitData()
+        
+        var total: Int = 0
+        lines.forEach {
+            guard let index = combos.firstIndex(of: $0) else { return }
+            total += index
+        }
+       
+        return "\(total)"
+    }
+}

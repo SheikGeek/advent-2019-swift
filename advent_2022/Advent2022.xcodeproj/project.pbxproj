@@ -30,6 +30,10 @@
 		28DE82BF293B0DB60052484F /* DayTwoPartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82BE293B0DB60052484F /* DayTwoPartOne.swift */; };
 		28DE82C1293B0DC40052484F /* DayTwoPartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82C0293B0DC40052484F /* DayTwoPartTwo.swift */; };
 		28DE82C3293B12EA0052484F /* DayTwoInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82C2293B12EA0052484F /* DayTwoInput.txt */; };
+		28DE82C6293B18D50052484F /* DayThree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82C5293B18D50052484F /* DayThree.swift */; };
+		28DE82C8293B18E90052484F /* DayThreePartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82C7293B18E90052484F /* DayThreePartOne.swift */; };
+		28DE82CA293B18EF0052484F /* DayThreePartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82C9293B18EF0052484F /* DayThreePartTwo.swift */; };
+		28DE82CC293D56A00052484F /* DayThreeInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82CB293D56A00052484F /* DayThreeInput.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +81,10 @@
 		28DE82BE293B0DB60052484F /* DayTwoPartOne.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTwoPartOne.swift; sourceTree = "<group>"; };
 		28DE82C0293B0DC40052484F /* DayTwoPartTwo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayTwoPartTwo.swift; sourceTree = "<group>"; };
 		28DE82C2293B12EA0052484F /* DayTwoInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayTwoInput.txt; sourceTree = "<group>"; };
+		28DE82C5293B18D50052484F /* DayThree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayThree.swift; sourceTree = "<group>"; };
+		28DE82C7293B18E90052484F /* DayThreePartOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayThreePartOne.swift; sourceTree = "<group>"; };
+		28DE82C9293B18EF0052484F /* DayThreePartTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayThreePartTwo.swift; sourceTree = "<group>"; };
+		28DE82CB293D56A00052484F /* DayThreeInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayThreeInput.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +167,7 @@
 		28DE82982939A8790052484F /* Days */ = {
 			isa = PBXGroup;
 			children = (
+				28DE82C4293B187A0052484F /* DayThree */,
 				28DE82B82939B08C0052484F /* DayInput */,
 				28DE82BB293B0D780052484F /* DayTwo */,
 				28DE82992939A8790052484F /* Day.swift */,
@@ -195,6 +204,7 @@
 			children = (
 				28DE82B92939B1050052484F /* DayOneInput.txt */,
 				28DE82C2293B12EA0052484F /* DayTwoInput.txt */,
+				28DE82CB293D56A00052484F /* DayThreeInput.txt */,
 			);
 			path = DayInput;
 			sourceTree = "<group>";
@@ -207,6 +217,16 @@
 				28DE82C0293B0DC40052484F /* DayTwoPartTwo.swift */,
 			);
 			path = DayTwo;
+			sourceTree = "<group>";
+		};
+		28DE82C4293B187A0052484F /* DayThree */ = {
+			isa = PBXGroup;
+			children = (
+				28DE82C5293B18D50052484F /* DayThree.swift */,
+				28DE82C7293B18E90052484F /* DayThreePartOne.swift */,
+				28DE82C9293B18EF0052484F /* DayThreePartTwo.swift */,
+			);
+			path = DayThree;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -315,6 +335,7 @@
 			files = (
 				28DE82BA2939B1050052484F /* DayOneInput.txt in Resources */,
 				28DE82C3293B12EA0052484F /* DayTwoInput.txt in Resources */,
+				28DE82CC293D56A00052484F /* DayThreeInput.txt in Resources */,
 				28DE82752939A7F80052484F /* LaunchScreen.storyboard in Resources */,
 				28DE82722939A7F80052484F /* Assets.xcassets in Resources */,
 				28DE82B42939A87D0052484F /* DayListTableViewCell.xib in Resources */,
@@ -357,6 +378,9 @@
 				28DE82B12939A87D0052484F /* DayUnimplemented.swift in Sources */,
 				28DE82B52939A87D0052484F /* DayListHeaderView.swift in Sources */,
 				28DE82AF2939A87D0052484F /* DayOne.swift in Sources */,
+				28DE82CA293B18EF0052484F /* DayThreePartTwo.swift in Sources */,
+				28DE82C6293B18D50052484F /* DayThree.swift in Sources */,
+				28DE82C8293B18E90052484F /* DayThreePartOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

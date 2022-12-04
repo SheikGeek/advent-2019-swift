@@ -77,6 +77,10 @@ class MainViewController: UIViewController {
                 currentDay = DayThreePartOne()
             case 6:
                 currentDay = DayThreePartTwo()
+            case 7:
+                currentDay = DayFourPartOne()
+            case 8:
+                currentDay = DayFourPartTwo()
             default:
                 currentDay = DayUnimplemented()
             }

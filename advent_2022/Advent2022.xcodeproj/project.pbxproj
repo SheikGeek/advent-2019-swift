@@ -38,6 +38,10 @@
 		28DE82D2293D622C0052484F /* DayFourPartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82CF293D622C0052484F /* DayFourPartOne.swift */; };
 		28DE82D3293D622C0052484F /* DayFour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82D0293D622C0052484F /* DayFour.swift */; };
 		28DE82D5293D62990052484F /* DayFourInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82D4293D62990052484F /* DayFourInput.txt */; };
+		28DE82DA293EEE650052484F /* DayFivePartOne.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82D7293EEE650052484F /* DayFivePartOne.swift */; };
+		28DE82DB293EEE650052484F /* DayFive.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82D8293EEE650052484F /* DayFive.swift */; };
+		28DE82DC293EEE650052484F /* DayFivePartTwo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DE82D9293EEE650052484F /* DayFivePartTwo.swift */; };
+		28DE82DE293EEE8E0052484F /* DayFiveInput.txt in Resources */ = {isa = PBXBuildFile; fileRef = 28DE82DD293EEE8E0052484F /* DayFiveInput.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +97,10 @@
 		28DE82CF293D622C0052484F /* DayFourPartOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayFourPartOne.swift; sourceTree = "<group>"; };
 		28DE82D0293D622C0052484F /* DayFour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayFour.swift; sourceTree = "<group>"; };
 		28DE82D4293D62990052484F /* DayFourInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayFourInput.txt; sourceTree = "<group>"; };
+		28DE82D7293EEE650052484F /* DayFivePartOne.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayFivePartOne.swift; sourceTree = "<group>"; };
+		28DE82D8293EEE650052484F /* DayFive.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayFive.swift; sourceTree = "<group>"; };
+		28DE82D9293EEE650052484F /* DayFivePartTwo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayFivePartTwo.swift; sourceTree = "<group>"; };
+		28DE82DD293EEE8E0052484F /* DayFiveInput.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = DayFiveInput.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,11 +184,12 @@
 			isa = PBXGroup;
 			children = (
 				28DE82B82939B08C0052484F /* DayInput */,
+				28DE82D6293EEE650052484F /* DayFive */,
 				28DE82CD293D622C0052484F /* DayFour */,
 				28DE82C4293B187A0052484F /* DayThree */,
 				28DE82BB293B0D780052484F /* DayTwo */,
-				28DE82992939A8790052484F /* Day.swift */,
 				28DE829E2939A8790052484F /* DayOne */,
+				28DE82992939A8790052484F /* Day.swift */,
 				28DE82A22939A8790052484F /* DayUnimplemented.swift */,
 			);
 			path = Days;
@@ -215,6 +224,7 @@
 				28DE82C2293B12EA0052484F /* DayTwoInput.txt */,
 				28DE82CB293D56A00052484F /* DayThreeInput.txt */,
 				28DE82D4293D62990052484F /* DayFourInput.txt */,
+				28DE82DD293EEE8E0052484F /* DayFiveInput.txt */,
 			);
 			path = DayInput;
 			sourceTree = "<group>";
@@ -247,6 +257,16 @@
 				28DE82D0293D622C0052484F /* DayFour.swift */,
 			);
 			path = DayFour;
+			sourceTree = "<group>";
+		};
+		28DE82D6293EEE650052484F /* DayFive */ = {
+			isa = PBXGroup;
+			children = (
+				28DE82D7293EEE650052484F /* DayFivePartOne.swift */,
+				28DE82D8293EEE650052484F /* DayFive.swift */,
+				28DE82D9293EEE650052484F /* DayFivePartTwo.swift */,
+			);
+			path = DayFive;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -361,6 +381,7 @@
 				28DE82722939A7F80052484F /* Assets.xcassets in Resources */,
 				28DE82B42939A87D0052484F /* DayListTableViewCell.xib in Resources */,
 				28DE82B72939A87D0052484F /* DayListHeaderView.xib in Resources */,
+				28DE82DE293EEE8E0052484F /* DayFiveInput.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,12 +406,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DE82DC293EEE650052484F /* DayFivePartTwo.swift in Sources */,
 				28DE82B32939A87D0052484F /* DayListTableViewCell.swift in Sources */,
 				28DE82B22939A87D0052484F /* MainViewController.swift in Sources */,
 				28DE82BF293B0DB60052484F /* DayTwoPartOne.swift in Sources */,
 				28DE82B62939A87D0052484F /* ReusableView.swift in Sources */,
 				28DE82D1293D622C0052484F /* DayFourPartTwo.swift in Sources */,
 				28DE82692939A7F60052484F /* AppDelegate.swift in Sources */,
+				28DE82DA293EEE650052484F /* DayFivePartOne.swift in Sources */,
 				28DE82AA2939A87D0052484F /* Day.swift in Sources */,
 				28DE826B2939A7F60052484F /* SceneDelegate.swift in Sources */,
 				28DE82B02939A87D0052484F /* DayOnePartTwo.swift in Sources */,
@@ -404,6 +427,7 @@
 				28DE82AF2939A87D0052484F /* DayOne.swift in Sources */,
 				28DE82CA293B18EF0052484F /* DayThreePartTwo.swift in Sources */,
 				28DE82C6293B18D50052484F /* DayThree.swift in Sources */,
+				28DE82DB293EEE650052484F /* DayFive.swift in Sources */,
 				28DE82C8293B18E90052484F /* DayThreePartOne.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

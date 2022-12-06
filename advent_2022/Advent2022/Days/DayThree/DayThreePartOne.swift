@@ -1,8 +1,8 @@
 //
-//  DayTwoPartOne.swift
+//  DayThreePartOne.swift
 //  Advent2022
 //
-//  Created by Chelsea Carr on 12/2/22.
+//  Created by Chelsea Carr on 12/3/22.
 //
 
 import Foundation

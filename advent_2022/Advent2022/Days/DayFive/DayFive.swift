@@ -1,13 +1,13 @@
 //
-//  DayFour.swift
+//  DayFive.swift
 //  Advent2022
 //
-//  Created by Chelsea Carr on 12/4/22.
+//  Created by Chelsea Carr on 12/5/22.
 //
 
 import Foundation
 
-class DayFour: Day {
+class DayFive: Day {
     private let fileInputName = "DayFourInput"
     
     var dayTitle = "--- Day 4: Camp Cleanup ---"

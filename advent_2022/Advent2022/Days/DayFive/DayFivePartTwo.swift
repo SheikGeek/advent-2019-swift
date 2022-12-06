@@ -1,8 +1,8 @@
 //
-//  DayFourPartTwo.swift
+//  DayFivePartTwo.swift
 //  Advent2022
 //
-//  Created by Chelsea Carr on 12/4/22.
+//  Created by Chelsea Carr on 12/5/22.
 //
 
 import Foundation
@@ -23,7 +23,7 @@ import UIKit
  In how many assignment pairs do the ranges overlap?
 */
 
-class DayFourPartTwo: DayFour {
+class DayFivePartTwo: DayFive {
     override func partTitle() -> String {
         return "Part 2"
     }
@@ -43,7 +43,7 @@ class DayFourPartTwo: DayFour {
     }
 }
 
-private extension DayFourPartTwo {
+private extension DayFivePartTwo {
     
     func solveProblem() -> String {
         let lines = parseAndSplitData()

@@ -1,8 +1,8 @@
 //
-//  DayFourPartOne.swift
+//  DayFivePartOne.swift
 //  Advent2022
 //
-//  Created by Chelsea Carr on 12/4/22.
+//  Created by Chelsea Carr on 12/5/22.
 //
 
 import Foundation
@@ -51,7 +51,7 @@ import UIKit
  In how many assignment pairs does one range fully contain the other?
  */
 
-class DayFourPartOne: DayFour {
+class DayFivePartOne: DayFive {
     
     override func partTitle() -> String {
         return "Part 1"
@@ -72,7 +72,7 @@ class DayFourPartOne: DayFour {
     }
 }
 
-private extension DayFourPartOne {
+private extension DayFivePartOne {
     
     func solveProblem() -> String {
         let lines = parseAndSplitData()

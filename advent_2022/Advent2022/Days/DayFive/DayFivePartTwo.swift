@@ -46,26 +46,13 @@ class DayFivePartTwo: DayFive {
 private extension DayFivePartTwo {
     
     func solveProblem() -> String {
-        let lines = parseAndSplitData()
-        var total: Int = 0
+        let (lines, stacks) = parseAndSplitData()
+        var total: String = ""
         lines.forEach {
-            let pairs = $0.components(separatedBy: .punctuationCharacters)
-            guard
-                let first = Int(pairs.first ?? ""),
-                let second = Int(pairs[1]),
-                let third = Int(pairs[2]),
-                let fourth = Int(pairs.last ?? "") else { return }
-            
-            guard
-                (first >= third && first <= fourth) ||
-                (second >= third && second <= fourth) ||
-                (third >= first && third <= second) ||
-                (fourth >= first && fourth <= second)
-            else { return }
-                
-            total += 1
+            $0
         }
         
-        return "\(total)"
+        
+        return total
     }
 }

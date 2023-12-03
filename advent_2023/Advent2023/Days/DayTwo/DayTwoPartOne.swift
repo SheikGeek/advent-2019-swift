@@ -9,32 +9,31 @@ import Foundation
 import UIKit
 
 /*
- --- Day 2: Rock Paper Scissors ---
- The Elves begin to set up camp on the beach. To decide whose tent gets to be closest to the snack storage, a giant Rock Paper Scissors tournament is already in progress.
+ --- Day 2: Cube Conundrum ---
+ You're launched high into the atmosphere! The apex of your trajectory just barely reaches the surface of a large island floating in the sky. You gently land in a fluffy pile of leaves. It's quite cold, but you don't see much snow. An Elf runs over to greet you.
 
- Rock Paper Scissors is a game between two players. Each game contains many rounds; in each round, the players each simultaneously choose one of Rock, Paper, or Scissors using a hand shape. Then, a winner for that round is selected: Rock defeats Scissors, Scissors defeats Paper, and Paper defeats Rock. If both players choose the same shape, the round instead ends in a draw.
+ The Elf explains that you've arrived at Snow Island and apologizes for the lack of snow. He'll be happy to explain the situation, but it's a bit of a walk, so you have some time. They don't get many visitors up here; would you like to play a game in the meantime?
 
- Appreciative of your help yesterday, one Elf gives you an encrypted strategy guide (your puzzle input) that they say will be sure to help you win. "The first column is what your opponent is going to play: A for Rock, B for Paper, and C for Scissors. The second column--" Suddenly, the Elf is called away to help with someone's tent.
+ As you walk, the Elf shows you a small bag and some cubes which are either red, green, or blue. Each time you play this game, he will hide a secret number of cubes of each color in the bag, and your goal is to figure out information about the number of cubes.
 
- The second column, you reason, must be what you should play in response: X for Rock, Y for Paper, and Z for Scissors. Winning every time would be suspicious, so the responses must have been carefully chosen.
+ To get information, once a bag has been loaded with cubes, the Elf will reach into the bag, grab a handful of random cubes, show them to you, and then put them back in the bag. He'll do this a few times per game.
 
- The winner of the whole tournament is the player with the highest score. Your total score is the sum of your scores for each round. The score for a single round is the score for the shape you selected (1 for Rock, 2 for Paper, and 3 for Scissors) plus the score for the outcome of the round (0 if you lost, 3 if the round was a draw, and 6 if you won).
+ You play several games and record the information from each game (your puzzle input). Each game is listed with its ID number (like the 11 in Game 11: ...) followed by a semicolon-separated list of subsets of cubes that were revealed from the bag (like 3 red, 5 green, 4 blue).
 
- Since you can't be sure if the Elf is trying to help you or trick you, you should calculate the score you would get if you were to follow the strategy guide.
+ For example, the record of a few games might look like this:
 
- For example, suppose you were given the following strategy guide:
+ Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+ Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+ Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+ Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
+ In game 1, three sets of cubes are revealed from the bag (and then put back again). The first set is 3 blue cubes and 4 red cubes; the second set is 1 red cube, 2 green cubes, and 6 blue cubes; the third set is only 2 green cubes.
 
- A Y
- B X
- C Z
- This strategy guide predicts and recommends the following:
+ The Elf would first like to know which games would have been possible if the bag contained only 12 red cubes, 13 green cubes, and 14 blue cubes?
 
- In the first round, your opponent will choose Rock (A), and you should choose Paper (Y). This ends in a win for you with a score of 8 (2 because you chose Paper + 6 because you won).
- In the second round, your opponent will choose Paper (B), and you should choose Rock (X). This ends in a loss for you with a score of 1 (1 + 0).
- The third round is a draw with both players choosing Scissors, giving you a score of 3 + 3 = 6.
- In this example, if you were to follow the strategy guide, you would get a total score of 15 (8 + 1 + 6).
+ In the example above, games 1, 2, and 5 would have been possible if the bag had been loaded with that configuration. However, game 3 would have been impossible because at one point the Elf showed you 20 red cubes at once; similarly, game 4 would also have been impossible because the Elf showed you 15 blue cubes at once. If you add up the IDs of the games that would have been possible, you get 8.
 
- What would your total score be if everything goes exactly according to your strategy guide?
+ Determine which games would have been possible if the bag had been loaded with only 12 red cubes, 13 green cubes, and 14 blue cubes. What is the sum of the IDs of those games?
  */
 
 class DayTwoPartOne: DayTwo {
@@ -44,13 +43,13 @@ class DayTwoPartOne: DayTwo {
     }
     
     override func description() -> String {
-        return "What would your total score be if everything goes exactly according to your strategy guide?"
+        return "What is the sum of the IDs of those games?"
     }
     
     override func answer() -> DayAnswer {
         
         let solution = solveProblem()
-        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The total score would be \(solution)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The sum of game IDs is \(solution)", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
@@ -61,23 +60,48 @@ class DayTwoPartOne: DayTwo {
 private extension DayTwoPartOne {
     
     func solveProblem() -> String {       
-        // A = rock, B = paper, C = scissors
-        // X = rock = 1, Y = paper = 2, Z = scissors = 3
-        // win = 6, draw = 3, loss = 0
+        let redCubeMax = 12
+        let greenCubeMax = 13
+        let blueCubeMax = 14
         
-        let possibleCombinations: [String] = [
-            "",
-            "B X",
-            "C Y",
-            "A Z",
-            "A X",
-            "B Y",
-            "C Z",
-            "C X",
-            "A Y",
-            "B Z",
-        ]
+        var total = 0
         
-        return total(from: possibleCombinations)
+        let lines = parseAndSplitData()
+        for line in lines {
+            let elements = line.components(separatedBy:CharacterSet(charactersIn: ":,;"))
+            
+            guard elements.first != "" else {
+                break
+            }
+            
+            var cubeDict = [
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            ]
+
+            var gameID = 0
+            for element in elements {
+                let numberColorPair = element.components(separatedBy: " ")
+                guard numberColorPair.first != "Game" else {
+                    gameID = Int(elements.first?.components(separatedBy: " ").last ?? "") ?? 0
+                    continue
+                }
+                
+                if let numOfCube = Int(numberColorPair[1]), cubeDict[numberColorPair.last ?? "invalid"]! < numOfCube  {
+                    cubeDict[numberColorPair.last ?? "invalid"] = numOfCube
+                }
+            }
+            
+            guard
+                cubeDict["red"]! <= redCubeMax &&
+                cubeDict["green"]! <= greenCubeMax &&
+                cubeDict["blue"]! <= blueCubeMax
+            else { continue }
+            
+            total += gameID
+        }
+        
+        return "\(total)"
     }
 }

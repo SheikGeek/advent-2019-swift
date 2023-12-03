@@ -11,7 +11,7 @@ class DayTwo: Day {
     
     private let fileInputName = "DayTwoInput"
     
-    var dayTitle = "--- Day 2: Rock Paper Scissors ---"
+    var dayTitle = "--- Day 2: Cube Conundrum ---"
 
     
     func partTitle() -> String {
@@ -37,16 +37,3 @@ class DayTwo: Day {
     }
 }
 
-extension DayTwo {
-    func total(from combos: [String]) -> String {
-        let lines = parseAndSplitData()
-        
-        var total: Int = 0
-        lines.forEach {
-            guard let index = combos.firstIndex(of: $0) else { return }
-            total += index
-        }
-       
-        return "\(total)"
-    }
-}

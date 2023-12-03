@@ -9,17 +9,26 @@ import Foundation
 import UIKit
 
 /*
---- Part Two ---
-The Elf finishes helping with the tent and sneaks back over to you. "Anyway, the second column says how the round needs to end: X means you need to lose, Y means you need to end the round in a draw, and Z means you need to win. Good luck!"
+ --- Part Two ---
+ The Elf says they've stopped producing snow because they aren't getting any water! He isn't sure why the water stopped; however, he can show you how to get to the water source to check it out for yourself. It's just up ahead!
 
-The total score is still calculated in the same way, but now you need to figure out what shape to choose so the round ends as indicated. The example above now goes like this:
+ As you continue your walk, the Elf poses a second question: in each game you played, what is the fewest number of cubes of each color that could have been in the bag to make the game possible?
 
-In the first round, your opponent will choose Rock (A), and you need the round to end in a draw (Y), so you also choose Rock. This gives you a score of 1 + 3 = 4.
-In the second round, your opponent will choose Paper (B), and you choose Rock so you lose (X) with a score of 1 + 0 = 1.
-In the third round, you will defeat your opponent's Scissors with Rock for a score of 1 + 6 = 7.
-Now that you're correctly decrypting the ultra top secret strategy guide, you would get a total score of 12.
+ Again consider the example games from earlier:
 
-Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?
+ Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green
+ Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue
+ Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red
+ Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red
+ Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green
+ In game 1, the game could have been played with as few as 4 red, 2 green, and 6 blue cubes. If any color had even one fewer cube, the game would have been impossible.
+ Game 2 could have been played with a minimum of 1 red, 3 green, and 4 blue cubes.
+ Game 3 must have been played with at least 20 red, 13 green, and 6 blue cubes.
+ Game 4 required at least 14 red, 3 green, and 15 blue cubes.
+ Game 5 needed no fewer than 6 red, 3 green, and 2 blue cubes in the bag.
+ The power of a set of cubes is equal to the numbers of red, green, and blue cubes multiplied together. The power of the minimum set of cubes in game 1 is 48. In games 2-5 it was 12, 1560, 630, and 36, respectively. Adding up these five powers produces the sum 2286.
+
+ For each game, find the minimum set of cubes that must have been present. What is the sum of the power of these sets?
 */
 
 class DayTwoPartTwo: DayTwo {
@@ -28,12 +37,12 @@ class DayTwoPartTwo: DayTwo {
     }
     
     override func description() -> String {
-        return "Following the Elf's instructions for the second column, what would your total score be if everything goes exactly according to your strategy guide?"
+        return "What is the sum of the power of these sets?"
     }
    
     override func answer() -> DayAnswer {
         let solution = solveProblem()
-        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The total score would be \(solution)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Answer for \(partTitle())", message: "The sum of these sets is \(solution)", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
         
@@ -44,24 +53,42 @@ class DayTwoPartTwo: DayTwo {
 private extension DayTwoPartTwo {
     
     func solveProblem() -> String {
-        // A = rock, B = paper, C = scissors
-        // rock = 1, paper = 2, scissors = 3
-        // X = lose, Y = draw, Z = Win
-        // win = 6, draw = 3, loss = 0
+        var total = 0
         
-        let possibleCombinations: [String] = [
-            "",
-            "B X",
-            "C X",
-            "A X",
-            "A Y",
-            "B Y",
-            "C Y",
-            "C Z",
-            "A Z",
-            "B Z",
-        ]
+        let lines = parseAndSplitData()
+        for line in lines {
+            let elements = line.components(separatedBy:CharacterSet(charactersIn: ":,;"))
+            
+            guard elements.first != "" else {
+                break
+            }
+            
+            var cubeDict = [
+                "red": 0,
+                "green": 0,
+                "blue": 0
+            ]
+
+            for element in elements {
+                let numberColorPair = element.components(separatedBy: " ")
+                guard numberColorPair.first != "Game" else {
+                    continue
+                }
+                
+                if let numOfCube = Int(numberColorPair[1]), cubeDict[numberColorPair.last ?? "invalid"]! < numOfCube  {
+                    cubeDict[numberColorPair.last ?? "invalid"] = numOfCube
+                }
+            }
+            
+            guard
+                let red = cubeDict["red"],
+                let green = cubeDict["green"],
+                let blue = cubeDict["blue"]
+            else { continue }
+            
+            total += red*green*blue
+        }
         
-        return total(from: possibleCombinations)
+        return "\(total)"
     }
 }
